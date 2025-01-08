@@ -4,22 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device,initial-scale=1.0">
     <title>我的網站</title>
+    <!--連接google字形-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!--連結外部樣式表-->
-    <link rel="stylesheet" href="styles.css"
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        section {
+            height: 100vh; /* 每個區塊佔滿一個視窗高度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+        }
+    </style>
    </head>
    <body>
     <h1>歡迎來到我的網站!</h1>
     <img src="https://via.placeholder.com/300" alt="示例圖片" width="300">
     <p>這是我的第一個網站，我正在學習 HTML 和 CSS</p>
+    
+    <!-- 按鈕 -->
     <button>點我!</button>
-    <nav>
+    <button onclick="alert('你點擊了按鈕！')">點擊我</button>
+    <button onclick="alert('感謝您的點擊！')">點擊我</button>
+      
+  <nav>
         <ul>
             <li><a href="#home">首頁</a></li>
             <li><a href="#about">關於</a></li>
             <li><a href="#contact">聯繫我們</a></li>
         </ul>
-    </nav>
-    
-
+ </nav>
 </body>
 </html>

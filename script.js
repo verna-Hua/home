@@ -1,1 +1,7 @@
-<button onclick="alert('你點擊了按鈕！')">點擊我</button>
+if (targetElement) {
+    targetElement.scrollIntoView({
+        behavior: 'smooth'
+    });
+} else {
+    console.error('目標元素未找到！');
+}

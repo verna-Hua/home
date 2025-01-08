@@ -1,44 +1,51 @@
-body{
-    background-color:#f0f8ff;
-    color:#333;
-    font-family: Arial, sans-serif;
+body {
+    background-color: #a9afb4; /* 背景顏色 */
+    color: #c0bf68; /* 文字顏色 */
+    font-family: 'Roboto', sans-serif; /* 字型 */
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 10px;
 }
-h1{
-    color:#ff6347;
+
+h1 {
+    color: #342383; /* 標題顏色 */
     text-align: center;
 }
+
 p {
     font-size: 16px;
     line-height: 1.5;
-    text-align: justify;
+    text-align: justify; /* 文字對齊方式 */
 }
+
 button {
-    background-color: #ff6347;
-    color: white;
+    background-color: #ff6347; /* 按鈕背景色 */
+    color: white; /* 按鈕文字顏色 */
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 5px; /* 圓角 */
     cursor: pointer;
     font-size: 16px;
 }
+
 button:hover {
-    background-color: #ff4500;
+    background-color: #6d6a69; /* 滑鼠懸停時的背景色 */
 }
+
 nav {
-    background-color: #333;
+    background-color: #333; /* 導覽列背景色 */
     color: white;
     width: 100%;
     padding: 10px 0;
 }
 
 nav ul {
-    list-style: none;
+    list-style: none; /* 移除項目符號 */
     display: flex;
     justify-content: center;
     margin: 0;
@@ -50,11 +57,27 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
+    text-decoration: none; /* 移除超連結底線 */
     color: white;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #ff6347;
+    color: #ff6347; /* 滑鼠懸停時的文字顏色 */
+}
+
+/* 響應式設計：在寬度小於768px時的樣式 */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+    
+    nav ul {
+        flex-direction: column; /* 導覽列變成垂直排列 */
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
 }
