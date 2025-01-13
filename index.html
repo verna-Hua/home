@@ -3,12 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device,initial-scale=1.0">
-    <title>我的網站</title>
-    <!--連接google字形-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!--連結外部樣式表-->
+    <title>geosat 經緯航太</title>
     <link rel="stylesheet" href="styles.css">
-    
     <style>
         section {
             height: 100vh; /* 每個區塊佔滿一個視窗高度 */
@@ -20,11 +16,56 @@
     </style>
    </head>
    <body>
+    <!--頂部導航欄-->
+    <nav>
+      <div class="loge">geosat</div>  
+      <ul class="nav-links">
+      <li><a href="#home">首頁</a></li>
+      <li><a href="#about">關於我們</a></li>
+      <li><a href="#services">服務</a></li>
+      <li><a href="#contact">聯繫我們</a></li>
+      </ul>
+    </nav> 
+   <!--橫幅區域-->
+   <header class="banner">
+    <h1>歡迎來到Geosat</h1>
+    <P>提供高品質衛星技術與解決方案</P>
+    <button>了解更多</button>
+    </header> 
+
+    <!--服務區塊-->
+    <section id="services">
+       <h2>我們的服務</h2>
+       <div class="services-gric">
+           <div class="services-item">
+            <h3>服務 1</h3>
+            <p>提供高精度的衛星監測技術</p> 
+            </div>
+         <div class="services-item">
+            <h3>服務 2</h3>
+            <p>提供可靠的通信解決方案。</p>
+         </div>
+         <div class="services-item">
+            <h3>服務 3</h3>
+            <p>支持全球定位與導航系統。</p>
+           </div>      
+       </div>
+    </section>
+    <!--聯繫我們-->
+    <footer>
+        <p>聯繫我們:services@geosat.com.tw | 電話:0909725291</p>
+        <p>&copy; 2025 geosat. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+    
+    
+    <!--之前寫的
     <h1>歡迎來到我的網站!</h1>
     <img src="https://via.placeholder.com/300" alt="示例圖片" width="300">
     <p>這是我的第一個網站，我正在學習 HTML 和 CSS</p>
     
-    <!-- 按鈕 -->
+      按鈕 
     <button>點我!</button>
     <button onclick="alert('你點擊了按鈕！')">點擊我</button>
     <button onclick="alert('感謝您的點擊！')">點擊我</button>
@@ -36,5 +77,5 @@
             <li><a href="#contact">聯繫我們</a></li>
         </ul>
  </nav>
-</body>
-</html>
+      -->
+
