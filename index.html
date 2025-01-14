@@ -1,81 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device,initial-scale=1.0">
-    <title>geosat 經緯航太</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"> <!-- 設定網頁的編碼為 UTF-8，能正確顯示多語言（例如中文）。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 適配行動裝置，讓網頁在手機和平板上顯示正常。 -->
+    <title>Geosat 經緯航太</title> <!-- 設定瀏覽器標籤頁的標題，方便識別網站。 -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!-- 引入 Swiper 的 CSS，讓輪播圖具備樣式。 -->
     <style>
-        section {
-            height: 100vh; /* 每個區塊佔滿一個視窗高度 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ccc;
+      
+        
+        /* 頂部導航欄樣式 */
+        nav { 
+            display: flex; /* 使用 Flexbox 排版，方便對齊內容。 */
+            align-items: center; /* 垂直方向置中內容。 */
+            justify-content: space-between; /* 將內容兩側分散對齊（左右佔滿空間）。 */
+            padding: 10px 20px; /* 設置內間距，讓內容與邊框有距離。 */
+            background-color: #333; /* 導航欄背景顏色設為深灰色。 */
+            color: #fff; /* 導航欄文字顏色設為白色。 */
         }
-    </style>
-   </head>
-   <body>
-    <!--頂部導航欄-->
-    <nav>
-      <div class="loge">geosat</div>  
-      <ul class="nav-links">
-      <li><a href="#home">首頁</a></li>
-      <li><a href="#about">關於我們</a></li>
-      <li><a href="#services">服務</a></li>
-      <li><a href="#contact">聯繫我們</a></li>
-      </ul>
-    </nav> 
-   <!--橫幅區域-->
-   <header class="banner">
-    <h1>歡迎來到Geosat</h1>
-    <P>提供高品質衛星技術與解決方案</P>
-    <button>了解更多</button>
-    </header> 
+        nav img { 
+            width: 80px; /* 設定 LOGO 的寬度為 80px。 */
+        }
+        nav ul {
+            display: flex; /* 將導航連結以水平方式排列。 */
+            list-style: none; /* 移除預設的列表點樣式。 */
+            padding: 0; /* 移除內間距。 */
+        }
+        nav ul li {
+            margin: 0 10px; /* 將每個選項左右間距設為 10px。 */
+        }
+        nav ul li a {
+            text-decoration: none; /* 移除超連結的下劃線。 */
+            color: #fff; /* 將文字設為白色。 */
+        }
+        nav ul li a:hover {
+            color: #f0a500; /* 滑鼠懸停時，變更連結文字顏色為黃色。 */
+        }
 
-    <!--服務區塊-->
+        /* Swiper 輪播樣式 */
+        .swiper {
+            width: 80%; /* 設置輪播圖寬度為頁面 80%。 */
+            height: 300px; /* 設置輪播圖高度為 300px。 */
+            margin: 20px auto; /* 輪播圖上下距離 20px，且居中。 */
+        }
+        .swiper-slide {
+            display: flex; /* 水平排列內容，方便置中對齊。 */
+            justify-content: center; /* 水平方向置中內容。 */
+            align-items: center; /* 垂直方向置中內容。 */
+            font-size: 24px; /* 設置文字大小為 24px。 */
+            background: #ddd; /* 輪播背景顏色設為淺灰色。 */
+        }
+
+        
+        /* 橫幅樣式 */
+        .banner {
+            text-align: center; /* 讓橫幅內容（文字、按鈕）居中顯示。 */
+            padding: 50px; /* 設置上下內間距為 50px，讓橫幅看起來更寬敞。 */
+            background-color: #f0f0f0; /* 設置背景為淺灰色。 */
+        }
+        .banner h1 {
+            font-size: 36px; /* 設置標題文字大小為 36px。 */
+        }
+        .banner p {
+            font-size: 18px; /* 設置描述文字大小為 18px。 */
+        }
+        .banner button {
+            padding: 10px 20px; /* 設置按鈕內間距，讓按鈕更易於點擊。 */
+            font-size: 16px; /* 按鈕文字大小設置為 16px。 */
+            background-color: #333; /* 按鈕背景設為深灰色。 */
+            color: #fff; /* 按鈕文字設為白色。 */
+            border: none; /* 移除按鈕的邊框樣式。 */
+            cursor: pointer; /* 滑鼠移上按鈕時顯示指針。 */
+        }
+        .banner button:hover {
+            background-color: #f0a500; /* 滑鼠懸停時，按鈕變為黃色。 */
+        }
+
+        /* 服務區塊樣式 */
+        #services {
+            padding: 50px 20px; /* 設置服務區塊的上下內間距為 50px。 */
+            text-align: center; /* 將標題與內容置中顯示。 */
+        }
+        .services-grid {
+            display: flex; /* 使用 Flexbox 排列多個服務卡片。 */
+            justify-content: center; /* 水平居中顯示所有卡片。 */
+            gap: 20px; /* 卡片之間的間距設為 20px。 */
+        }
+        .services-item {
+            border: 1px solid #ccc; /* 設置卡片邊框為淺灰色。 */
+            padding: 20px; /* 設置卡片內部的間距。 */
+            width: 250px; /* 卡片寬度設置為 250px。 */
+            background-color: #ecc085; /* 設置卡片背景顏色為白色。 */
+        }
+
+        /* 頁尾樣式 */
+        footer {
+            text-align: center; /* 將文字置中對齊。 */
+            padding: 20px; /* 設置上下內間距。 */
+            background-color: #4578b3; /* 設置背景顏色為深灰色。 */
+            color: #eae3ec; /* 設置文字顏色為白色。 */
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- 頂部導航欄 -->
+    <nav>
+        <img src="images/6.png" alt="Geosat Logo"> <!-- LOGO 圖片，放在導航欄左側。 -->
+        <ul class="nav-links">
+            <li><a href="#home">首頁</a></li> <!-- 導航連結，跳轉到 "首頁" 區塊。 -->
+            <li><a href="#about">關於我們</a></li> <!-- 導航連結，跳轉到 "關於我們" 區塊。 -->
+            <li><a href="#services">服務</a></li> <!-- 導航連結，跳轉到 "服務" 區塊。 -->
+            <li><a href="#contact">聯繫我們</a></li> <!-- 導航連結，跳轉到 "聯繫我們" 區塊。 -->
+        </ul>
+    </nav>
+    <!-- Swiper 輪播 -->
+    <div class="swiper">
+        <div class="swiper-wrapper"> <!-- 輪播內容容器 -->
+            
+            <div class="swiper-slide" id="slide1"> <!-- 每張輪播圖片的區塊 -->
+                <img src="images/1.jpg" alt="圖片 1"style="width: 100%; height: auto; object-fit: cover;">
+                 </div>
+            <div class="swiper-slide" id="slide2">
+                <img src="images/2.jpg" alt="圖片 2"style="width: 100%; height: auto; object-fit: cover;">
+                 </div> 
+            <div class="swiper-slide" id="slide3">
+                <img src="images/3.jpg" alt="圖片 3"style="width: 100%; height: auto; object-fit: cover;">
+                 </div>
+        </div>
+        <!-- Swiper的導航按鈕 -->
+        <div class="swiper-button-next"></div> <!-- 右邊的下一頁按鈕 -->
+        <div class="swiper-button-prev"></div> <!-- 左邊的上一頁按鈕 -->
+        <!-- 滾動按鈕 -->
+    </div>
+    <!-- 橫幅區域 -->
+   
+    <header class="banner">
+        <h1>歡迎來到 Geosat</h1> <!-- 橫幅標題 -->
+        <p>提供高品質衛星技術與解決方案</p> <!-- 橫幅描述 -->
+        <img src="images/8.jpg" alt="示例圖片" width="500">
+        <img src="images/9.jpg" alt="示例圖片" width="500">
+        <img src="images/10.jpg" alt="示例圖片" width="500">
+        <button>了解更多</button> <!-- 橫幅按鈕 -->
+        
+    </header>
+
+    <!-- 服務區塊 -->
     <section id="services">
-       <h2>我們的服務</h2>
-       <div class="services-gric">
-           <div class="services-item">
-            <h3>服務 1</h3>
-            <p>提供高精度的衛星監測技術</p> 
+        <h2>我們的服務</h2> <!-- 服務區塊標題 -->
+        <div class="services-grid">
+            <div class="services-item">
+                <h3>服務 1</h3>
+                <p>提供高精度的衛星監測技術</p>
             </div>
-         <div class="services-item">
-            <h3>服務 2</h3>
-            <p>提供可靠的通信解決方案。</p>
-         </div>
-         <div class="services-item">
-            <h3>服務 3</h3>
-            <p>支持全球定位與導航系統。</p>
-           </div>      
-       </div>
+            <div class="services-item">
+                <h3>服務 2</h3>
+                <p>提供可靠的通信解決方案</p>
+            </div>
+            <div class="services-item">
+                <h3>服務 3</h3>
+                <p>支持全球定位與導航系統</p>
+            </div>
+        </div>
     </section>
-    <!--聯繫我們-->
+
+    <!-- 聯繫我們 -->
     <footer>
-        <p>聯繫我們:services@geosat.com.tw | 電話:0909725291</p>
-        <p>&copy; 2025 geosat. All rights reserved.</p>
+        <p>聯繫我們: services@geosat.com.tw | 電話: 0909725291</p> <!-- 聯繫方式 -->
+        <p>&copy; 2025 Geosat. All rights reserved.</p> <!-- 版權聲明 -->
+        <p>綜合詢問：info@geosat.com.tw</p>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!-- 引入 Swiper 的 JS，控制輪播圖功能。 -->
+    <script>
+        // 初始化 Swiper
+        const swiper = new Swiper('.swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next', // 右側按鈕功能
+                prevEl: '.swiper-button-prev', // 左側按鈕功能
+            },
+            loop: true, // 啟用循環模式，讓圖片無限循環顯示
+        });
+
+        // 平滑滾動函數
+        function scrollToSlide(slideId) {
+            const targetElement = document.getElementById(slideId); // 根據 ID 選取目標圖片
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth', // 平滑滾動
+                    block: 'center',    // 滾動到圖片中心
+                });
+            } else {
+                console.error('未找到指定的圖片 Slide！'); // 如果 ID 不存在，顯示錯誤訊息
+            }
+        }
+    </script>
 </body>
 </html>
-    
-    
-    <!--之前寫的
-    <h1>歡迎來到我的網站!</h1>
-    <img src="https://via.placeholder.com/300" alt="示例圖片" width="300">
-    <p>這是我的第一個網站，我正在學習 HTML 和 CSS</p>
-    
-      按鈕 
-    <button>點我!</button>
-    <button onclick="alert('你點擊了按鈕！')">點擊我</button>
-    <button onclick="alert('感謝您的點擊！')">點擊我</button>
-      
-  <nav>
-        <ul>
-            <li><a href="#home">首頁</a></li>
-            <li><a href="#about">關於</a></li>
-            <li><a href="#contact">聯繫我們</a></li>
-        </ul>
- </nav>
-      -->
-
